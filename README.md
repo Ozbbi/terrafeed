@@ -98,7 +98,7 @@ Keys go in **Settings**, are stored locally, and are sent only to the service th
 ## Build from source
 
 ```bash
-git clone https://github.com/OWNER/terrafeed.git
+git clone https://github.com/Ozbbi/terrafeed.git
 cd terrafeed
 npm install
 npm run tauri dev
