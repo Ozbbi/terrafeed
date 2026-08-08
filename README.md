@@ -38,9 +38,37 @@ and alerting that waits for independent sources to agree.
 
 ## Install
 
-Grab the installer from [Releases](../../releases) and run it. Windows may warn that the publisher is
-unverified — the build is not code-signed. Nothing else is required: **every layer above works with no
-API key at all.**
+**[Download the latest release →](../../releases/latest)**
+
+- **Installer** — `Terrafeed_1.0.0_x64-setup.exe` (2.4 MB), no admin rights needed
+- **Portable** — `Terrafeed-1.0.0-portable.exe` (5.5 MB), nothing installed
+
+Nothing else is required: **every layer above works with no API key at all.**
+
+### Windows will warn you. Here's why, and how to check.
+
+You will see **"Windows protected your PC"** with *Publisher: Unknown publisher*. That is not a virus
+detection — it is what Windows shows for any application not signed with a paid code-signing
+certificate. Terrafeed is a free open-source project and does not have one.
+
+To run it: **More info → Run anyway** (Türkçe: **Ek bilgi → Yine de çalıştır**).
+
+Windows Defender scans these files clean. Rather than trusting that, verify the download is
+byte-for-byte what was built here:
+
+```powershell
+Get-FileHash .\Terrafeed_1.0.0_x64-setup.exe -Algorithm SHA256
+```
+
+| File | SHA-256 |
+|---|---|
+| `Terrafeed_1.0.0_x64-setup.exe` | `66f043e65ca49622ee1703bfff5c8a1304a0be3b5bc6bc36407086f1caf60028` |
+| `Terrafeed-1.0.0-portable.exe` | `41cdba0831d6b88a591ed3565569df22a2a0b6f8f92c83f4abf8b82589b0468b` |
+
+Or skip the binaries entirely: the source is all here, and `npm run tauri build` reproduces them.
+
+**Nothing phones home.** No analytics, no account, no telemetry. Outbound requests go only to the data
+providers listed below, through a host allowlist enforced in Rust.
 
 ## Data sources
 
