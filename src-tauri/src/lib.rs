@@ -18,7 +18,7 @@ pub(crate) static HTTP: Lazy<reqwest::Client> = Lazy::new(|| {
         .user_agent(concat!(
             "Terrafeed/",
             env!("CARGO_PKG_VERSION"),
-            " (+https://github.com/OWNER/terrafeed)"
+            " (+https://github.com/Ozbbi/terrafeed)"
         ))
         // The World Bank indicator endpoint regularly takes 20s+; anything
         // shorter turns the country panel into a coin flip.
