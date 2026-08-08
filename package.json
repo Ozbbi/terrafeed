@@ -1,0 +1,37 @@
+{
+  "name": "terrafeed",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Terrafeed — open-source global situational awareness dashboard.",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "tauri": "tauri",
+    "tauri:dev": "tauri dev",
+    "tauri:build": "tauri build"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.70",
+    "@tauri-apps/api": "^2",
+    "@tauri-apps/plugin-notification": "^2",
+    "@tauri-apps/plugin-opener": "^2",
+    "maplibre-gl": "^5",
+    "react": "^19",
+    "react-dom": "^19",
+    "satellite.js": "^5",
+    "zustand": "^5"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2",
+    "@types/geojson": "^7946",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^5",
+    "typescript": "^5.9.2",
+    "vite": "^7"
+  }
+}
